@@ -1,0 +1,2 @@
+rules:
+	- Surda\PHPStan\Rules\DisallowedFunctionCallsRule

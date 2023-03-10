@@ -1,0 +1,16 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Class Surda\\\\PHPStan\\\\Rules\\\\DisallowedFunctionCallsRule implements generic interface PHPStan\\\\Rules\\\\Rule but does not specify its types\\: TNodeType$#"
+			count: 1
+			path: src/Rules/DisallowedFunctionCallsRule.php
+
+		-
+			message: "#^Class Tests\\\\Surda\\\\PHPStan\\\\Rules\\\\DisallowedFunctionCallsRuleTest extends generic class PHPStan\\\\Testing\\\\RuleTestCase but does not specify its types\\: TRule$#"
+			count: 1
+			path: tests/Rules/DisallowedFunctionCallsRuleTest.php
+
+		-
+			message: "#^Method Tests\\\\Surda\\\\PHPStan\\\\Rules\\\\DisallowedFunctionCallsRuleTest\\:\\:getRule\\(\\) return type with generic interface PHPStan\\\\Rules\\\\Rule does not specify its types\\: TNodeType$#"
+			count: 1
+			path: tests/Rules/DisallowedFunctionCallsRuleTest.php

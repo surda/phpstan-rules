@@ -1,0 +1,44 @@
+{
+    "name": "surda/phpstan-rules",
+    "description": "Various PHPStan rules",
+    "keywords": ["nette", "phpstan"],
+    "type": "library",
+    "homepage": "http://surani.cz",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Radek Šuráni",
+            "homepage": "http://surani.cz",
+            "email": "radek@surani.cz"
+        }
+    ],
+    "support": {
+        "email": "radek@surani.cz",
+        "issues": "https://github.com/surda/phpstan-rules/issues"
+    },
+    "require": {
+        "php": ">=8.0",
+        "phpstan/phpstan": "^1.10"
+    },
+    "require-dev": {
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.5",
+        "tracy/tracy": "^2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Surda\\PHPStan\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Surda\\PHPStan\\": "tests/"
+        }
+    },
+    "scripts": {
+        "da": [
+            "composer dump-autoload -o"
+        ]
+    },
+    "minimum-stability": "stable"
+}
