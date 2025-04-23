@@ -7,7 +7,9 @@ use PhpParser\Node\Expr\FuncCall;
 use PhpParser\Node\Name;
 use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\ReflectionProvider;
+use PHPStan\Rules\IdentifierRuleError;
 use PHPStan\Rules\Rule;
+use PHPStan\Rules\RuleErrorBuilder;
 use function sprintf;
 use function strtolower;
 
@@ -35,7 +37,7 @@ class DisallowedFunctionCallsRule implements Rule
 
     /**
      * @param FuncCall $node
-     * @return string[] errors
+     * @return list<IdentifierRuleError>
      */
     public function processNode(Node $node, Scope $scope): array
     {
@@ -53,6 +55,10 @@ class DisallowedFunctionCallsRule implements Rule
             return [];
         }
 
-        return [sprintf('Call to function %s() is not allowed.', $functionName)];
+        $error = RuleErrorBuilder::message(sprintf('Call to function %s() is not allowed.', $functionName))
+            ->identifier('surda.functionIsNotAllowed')
+            ->build();
+
+        return [$error];
     }
 }
